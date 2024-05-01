@@ -7,6 +7,7 @@ import com.example.application.data.ContactRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -33,7 +34,7 @@ public class CRMService {
             @NotNull
             @Size(min = 1, max = 50)
             String lastName,
-            @NotNull
+            @NotEmpty(message = "Please provide email")
             @Email
             String email,
             @NotNull
